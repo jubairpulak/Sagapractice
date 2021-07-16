@@ -22,7 +22,7 @@ const UsersList = ({ users, onDelete }) => {
 						<ListGroupItem key={user.id}>
 							<section style={{ display: "flex" }}>
 								<div style={{ flexGrow: 1, margin: "auto 0" }}>
-									{user.firstName} {user.astName}
+									{user.firstName} {user.lastName}
 								</div>
 								<div>
 									<Button

@@ -28,13 +28,13 @@ function* watchGetUserRequest() {
 }
 
 //generator for create
-function* createUser(action) {
+function* createUser({ payload }) {
 	try {
-		const { firstName, lastName } = action.payload;
-		console.log("firstname :", firstName, lastName);
+		// const { firstName, lastName } = payload;
+		// console.log("firstname :", firstName, lastName);
 		const data = yield call(api.createUser, {
-			firstName,
-			lastName,
+			firstName: payload.firstName,
+			lastName: payload.lastName,
 		});
 		console.log("data : ", data);
 
@@ -51,6 +51,7 @@ function* watchCreateUserRequest() {
 function* deleteUser({ userId }) {
 	try {
 		yield call(api.deleteUser, userId);
+		console.log("id : no ", userId);
 		yield call(getUsers);
 	} catch (err) {}
 }
