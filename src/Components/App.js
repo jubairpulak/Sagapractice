@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
 
-import {
-	getUsersRequest,
-	createUserRequest,
-	deleteUserRequest,
-} from "../actions/users";
+// import {
+// 	getUsersRequest,
+// 	createUserRequest,
+// 	deleteUserRequest,
+// } from "../actions/users";
 import UsersList from "./UsersList";
 import NewUserForm from "./NewUserForm";
 
@@ -40,7 +40,6 @@ const App = (props) => {
 
 	const handleDeleteUser = (userId) => {
 		// users/delete_user_request
-		props.deleteUserRequest(userId);
 		dispatch({
 			type: "users/delete_user_request",
 			payload: userId,
@@ -94,6 +93,4 @@ const App = (props) => {
 // 		);
 // 	}
 // }
-export default connect(({ users }) => ({ users }), {
-	getUsersRequest,
-})(App);
+export default App;
